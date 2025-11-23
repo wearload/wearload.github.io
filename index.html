@@ -2,10 +2,370 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Моя первая страница</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WearLoad - Загрузчик для Wear OS</title>
+    <meta name="description" content="Установка APK и передача файлов с телефона на Wear OS часы">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+    <style>
+        /* --- БАЗОВЫЕ НАСТРОЙКИ --- */
+        :root {
+            --bg-color: #0a0e17; /* Глубокий темный */
+            --card-bg: #161b29;
+            --primary: #00e5ff; /* Циан из лого */
+            --secondary: #7b1fa2; /* Фиолетовый из лого */
+            --text-main: #ffffff;
+            --text-sec: #b0b3b8;
+            --gradient: linear-gradient(135deg, var(--secondary), var(--primary));
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* --- ШАПКА --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            background: rgba(10, 14, 23, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .lang-switch {
+            font-size: 0.9rem;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 5px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .lang-switch:hover { background: rgba(0, 229, 255, 0.1); }
+
+        /* --- ГЛАВНЫЙ ЭКРАН (HERO) --- */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: radial-gradient(circle at center, rgba(123, 31, 162, 0.15) 0%, transparent 70%);
+        }
+
+        .app-icon-placeholder {
+            width: 120px;
+            height: 120px;
+            background: var(--card-bg);
+            border-radius: 25px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.2);
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Замени src на путь к своему логотипу */
+        .app-icon-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            color: var(--text-sec);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(0, 229, 255, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .btn-download:active { transform: scale(0.95); }
+
+        /* --- ОСОБЕННОСТИ --- */
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--text-main);
+        }
+
+        .features {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .feature-card span {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* --- ГАЛЕРЕЯ (Свайп) --- */
+        .gallery-container {
+            padding: 20px;
+            overflow-x: auto;
+            display: flex;
+            gap: 15px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch; /* Плавность на iOS */
+        }
+
+        /* Скрываем скроллбар для красоты */
+        .gallery-container::-webkit-scrollbar { display: none; }
+
+        .screenshot {
+            flex: 0 0 200px; /* Ширина скриншота */
+            height: 400px;
+            background: #222;
+            border-radius: 15px;
+            scroll-snap-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+        
+        .screenshot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- ИНСТРУКЦИИ (Аккордеон) --- */
+        .faq { padding: 20px; max-width: 800px; margin: 0 auto; }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 20px;
+            color: var(--text-sec);
+        }
+
+        .faq-item.active .faq-body {
+            padding-bottom: 20px;
+            max-height: 500px; /* Достаточно большое значение */
+        }
+
+        .arrow { transition: 0.3s; }
+        .faq-item.active .arrow { transform: rotate(180deg); }
+
+        /* --- НОВОСТИ --- */
+        .updates { padding: 20px; max-width: 800px; margin: 0 auto; }
+        .update-item {
+            border-left: 3px solid var(--secondary);
+            padding-left: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .update-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 13px;
+            height: 13px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+        .date { font-size: 0.8rem; color: var(--primary); margin-bottom: 5px; display: block; }
+
+        /* --- ФУТЕР --- */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #05080e;
+            margin-top: 40px;
+            color: var(--text-sec);
+        }
+        
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .social-links a { font-size: 1.5rem; transition: 0.2s; }
+        .social-links a:hover { color: var(--primary); }
+
+    </style>
 </head>
 <body>
-    <h1>Привет, мир!</h1>
-    <p>Это самый простой текст на странице.</p>
+
+    <header>
+        <div class="logo">
+            <span class="material-icons-round">watch</span>
+            WearLoad
+        </div>
+        <a href="en.html" class="lang-switch">EN</a>
+    </header>
+
+    <section class="hero">
+        <div class="app-icon-placeholder">
+            <img src="icon_placeholder.png" alt="WearLoad Icon" onerror="this.style.display='none'">
+            <span class="material-icons-round" style="font-size: 50px; color: white; position: absolute;">android</span>
+        </div>
+        <h1>WearLoad</h1>
+        <p class="tagline">Управляй своими часами без ПК.<br>Установка APK и передача файлов в один клик.</p>
+        
+        <a href="#" class="btn-download">
+            <span class="material-icons-round">download</span>
+            Скачать APK
+        </a>
+        <p style="margin-top: 10px; font-size: 0.8rem; color: #666;">Версия 1.0 | Android 8.0+</p>
+    </section>
+
+    <h2 class="section-title">Возможности</h2>
+    <section class="features">
+        <div class="feature-card">
+            <span class="material-icons-round">install_mobile</span>
+            <h3>Установка APK</h3>
+            <p style="margin-top: 10px; color: #aaa;">Выбирай файлы на телефоне и устанавливай их на часы. Поддержка APK, APKS и ZIP.</p>
+        </div>
+        <div class="feature-card">
+            <span class="material-icons-round">sync_alt</span>
+            <h3>Wearable IP</h3>
+            <p style="margin-top: 10px; color: #aaa;">Быстрая передача данных по Wi-Fi или Bluetooth без использования проводов.</p>
+        </div>
+        <div class="feature-card">
+            <span class="material-icons-round">save_alt</span>
+            <h3>Экспорт файлов</h3>
+            <p style="margin-top: 10px; color: #aaa;">Скачивай установленные файлы с часов обратно на телефон для бэкапа.</p>
+        </div>
+    </section>
+
+    <h2 class="section-title">Скриншоты</h2>
+    <div class="gallery-container">
+        <div class="screenshot"><img src="screen1.jpg" alt="Screen 1"></div>
+        <div class="screenshot"><img src="screen2.jpg" alt="Screen 2"></div>
+        <div class="screenshot"><img src="screen3.jpg" alt="Screen 3"></div>
+        <div class="screenshot"><img src="screen4.jpg" alt="Screen 4"></div>
+    </div>
+
+    <h2 class="section-title">Инструкция</h2>
+    <section class="faq">
+        <div class="faq-item">
+            <div class="faq-header">
+                Как подключить часы?
+                <span class="material-icons-round arrow">expand_more</span>
+            </div>
+            <div class="faq-body">
+                <p>1. Включите отладку по Wi-Fi на часах.<br>2. Введите IP адрес часов в приложении.<br>3. Нажмите "Подключить".</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-header">
+                Поддерживает ли это Samsung Galaxy Watch?
+                <span class="material-icons-round arrow">expand_more</span>
+            </div>
+            <div class="faq-body">
+                <p>Да, приложение работает на всех часах с Wear OS 4.0 и выше (Samsung, Pixel Watch, TicWatch).</p>
+            </div>
+        </div>
+    </section>
+
+    <h2 class="section-title">Что нового</h2>
+    <section class="updates">
+        <div class="update-item">
+            <span class="date">23.11.2025 — Версия 1.3.1</span>
+            <h3>Первый релиз!</h3>
+            <p style="color: #aaa;">Базовая поддержка APK и APKS файлов. Исправлены баги с подключением.</p>
+        </div>
+        <div class="update-item">
+            <span class="date">10.11.2025 — Beta</span>
+            <h3>Начало тестирования</h3>
+            <p style="color: #aaa;">Запуск закрытого бета-теста.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 WearLoad</p>
+        <div class="social-links">
+            <a href="https://github.com/wearload" target="_blank">GitHub</a> 
+            <a href="#" target="_blank">Telegram</a>
+            <a href="#" target="_blank">4PDA</a>
+        </div>
+    </footer>
+
+    <script>
+        // Скрипт для работы "гармошки" в инструкции
+        document.querySelectorAll('.faq-header').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+
 </body>
 </html>
