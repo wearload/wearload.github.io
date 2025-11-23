@@ -185,6 +185,30 @@
             object-fit: cover;
         }
 
+		/* --- Адаптивный блок для видео YouTube --- */
+		.video-section {
+			padding: 20px;
+			max-width: 800px;
+			margin: 20px auto;
+		}
+
+		.video-container {
+			position: relative;
+			padding-bottom: 56.25%; /* Соотношение сторон 16:9 */
+			height: 0;
+			overflow: hidden;
+			border-radius: 15px;
+			box-shadow: 0 0 30px rgba(0, 229, 255, 0.2);
+		}
+
+		.video-container iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
         /* --- ИНСТРУКЦИИ (Аккордеон) --- */
         .faq { padding: 20px; max-width: 800px; margin: 0 auto; }
 
@@ -312,6 +336,13 @@
 		<div class="screenshot"><img src="4.png" alt="Screen 4"></div>
     </div>
 
+	<h2 class="section-title">Видео-инструкция</h2>
+		<section class="video-section">
+			<div class="video-container">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/Xk1FizpTH2E?si=PY_40gcYydS12p7_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>				
+			</div>
+		</section>
+	
     <h2 class="section-title">Инструкция</h2>
     <section class="faq">
         <div class="faq-item">
