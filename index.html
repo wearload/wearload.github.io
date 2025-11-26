@@ -90,7 +90,7 @@
             border: 2px solid rgba(255,255,255,0.1);
         }
         
-        /* Замени src на путь к своему логотипу */
+        /* Путь к логотипу */
         .app-icon-placeholder img {
             width: 100%;
             height: 100%;
@@ -125,6 +125,14 @@
         }
 
         .btn-download:active { transform: scale(0.95); }
+
+        .archive-link {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            text-decoration: underline;
+        }
 
         /* --- ОСОБЕННОСТИ --- */
         .section-title {
@@ -291,7 +299,7 @@
             <span class="material-icons-round">watch</span>
             WearLoad
         </div>
-        <a href="#" class="lang-switch">EN</a>
+        <a href="index_en.html" class="lang-switch">EN</a>
     </header>
 
     <section class="hero">
@@ -302,11 +310,13 @@
         <h1>WearLoad</h1>
         <p class="tagline">Управляй своими часами без ПК.<br>Установка APK, APKS и ZIP файлов в пару кликов.</p>
         
-        <a href="WearLoads_v1.3.1_Beta.apk" class="btn-download">
+        <a href="WearLoad_v1.3.2.apk" class="btn-download">
             <span class="material-icons-round">download</span>
             Скачать APK
         </a>
-        <p style="margin-top: 10px; font-size: 0.8rem; color: #666;">Версия 1.3.1 Beta</p>
+        <p style="margin-top: 10px; font-size: 0.8rem; color: #666;">Версия 1.3.2</p>
+
+        <a href="WearLoads_v1.3.1_Beta.apk" class="archive-link">Скачать прошлую версию (1.3.1 Beta)</a>
     </section>
 
     <h2 class="section-title">Возможности</h2>
@@ -367,6 +377,18 @@
 
     <h2 class="section-title">Что нового</h2>
     <section class="updates">
+        <div class="update-item">
+            <span class="date">26.11.2025 — Версия 1.3.2</span>
+            <h3>Стабильный релиз</h3>
+            <p style="color: #aaa;">
+                - Приставка "Beta" убрана (аудитория более 800 человек).<br>
+                - Добавлены уведомления на часах для надежного получения файлов.<br>
+                - Добавлена вибрация и звук при приеме файла.<br>
+                - Добавлена иконка "Поделиться" в списке файлов для отправки через системное меню.<br>
+                - Добавлены новые переводы.<br>
+                - Версии 1.3.1 и 1.3.2 могут работать независимо друг от друга.
+            </p>
+        </div>
         <div class="update-item">
             <span class="date">23.11.2025 — Версия 1.3.1 Beta</span>
             <h3>Первый релиз на этой страничке!</h3>

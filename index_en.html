@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WearLoad - Downloader for Wear OS</title>
+    <meta name="description" content="Install APK and transfer files from phone to Wear OS watch">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+    <style>
+        /* --- BASIC SETTINGS --- */
+        :root {
+            --bg-color: #0a0e17;
+            --card-bg: #161b29;
+            --primary: #00e5ff;
+            --secondary: #7b1fa2;
+            --text-main: #ffffff;
+            --text-sec: #b0b3b8;
+            --gradient: linear-gradient(135deg, var(--secondary), var(--primary));
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* --- HEADER --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            background: rgba(10, 14, 23, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .lang-switch {
+            font-size: 0.9rem;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 5px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .lang-switch:hover { background: rgba(0, 229, 255, 0.1); }
+
+        /* --- HERO --- */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: radial-gradient(circle at center, rgba(123, 31, 162, 0.15) 0%, transparent 70%);
+        }
+
+        .app-icon-placeholder {
+            width: 120px;
+            height: 120px;
+            background: var(--card-bg);
+            border-radius: 25px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.2);
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+        
+        .app-icon-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            color: var(--text-sec);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(0, 229, 255, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .btn-download:active { transform: scale(0.95); }
+
+        .archive-link {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            text-decoration: underline;
+        }
+
+        /* --- FEATURES --- */
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--text-main);
+        }
+
+        .features {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .feature-card span {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* --- GALLERY --- */
+        .gallery-container {
+            padding: 20px;
+            overflow-x: auto;
+            display: flex;
+            gap: 15px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .gallery-container::-webkit-scrollbar { display: none; }
+
+        .screenshot {
+            flex: 0 0 200px;
+            height: 400px;
+            background: #222;
+            border-radius: 15px;
+            scroll-snap-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+        
+        .screenshot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+		/* --- VIDEO --- */
+		.video-section {
+			padding: 20px;
+			max-width: 800px;
+			margin: 20px auto;
+		}
+
+		.video-container {
+			position: relative;
+			padding-bottom: 56.25%;
+			height: 0;
+			overflow: hidden;
+			border-radius: 15px;
+			box-shadow: 0 0 30px rgba(0, 229, 255, 0.2);
+		}
+
+		.video-container iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+        /* --- FAQ --- */
+        .faq { padding: 20px; max-width: 800px; margin: 0 auto; }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 20px;
+            color: var(--text-sec);
+        }
+
+        .faq-item.active .faq-body {
+            padding-bottom: 20px;
+            max-height: 500px;
+        }
+
+        .arrow { transition: 0.3s; }
+        .faq-item.active .arrow { transform: rotate(180deg); }
+
+        /* --- UPDATES --- */
+        .updates { padding: 20px; max-width: 800px; margin: 0 auto; }
+        .update-item {
+            border-left: 3px solid var(--secondary);
+            padding-left: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .update-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 13px;
+            height: 13px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+        .date { font-size: 0.8rem; color: var(--primary); margin-bottom: 5px; display: block; }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #05080e;
+            margin-top: 40px;
+            color: var(--text-sec);
+        }
+        
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .social-links a { font-size: 1.5rem; transition: 0.2s; }
+        .social-links a:hover { color: var(--primary); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <span class="material-icons-round">watch</span>
+            WearLoad
+        </div>
+        <a href="index.html" class="lang-switch">RU</a>
+    </header>
+
+    <section class="hero">
+        <div class="app-icon-placeholder">
+            <img src="icon_placeholder.png" alt="WearLoad Icon" onerror="this.style.display='none'">
+            <span class="material-icons-round" style="font-size: 50px; color: white; position: absolute;">android</span>
+        </div>
+        <h1>WearLoad</h1>
+        <p class="tagline">Manage your watch without a PC.<br>Install APK, APKS, and ZIP files in a few clicks.</p>
+        
+        <a href="WearLoad_v1.3.2.apk" class="btn-download">
+            <span class="material-icons-round">download</span>
+            Download APK
+        </a>
+        <p style="margin-top: 10px; font-size: 0.8rem; color: #666;">Version 1.3.2</p>
+        
+        <a href="WearLoads_v1.3.1_Beta.apk" class="archive-link">Download Previous Version (1.3.1 Beta)</a>
+    </section>
+
+    <h2 class="section-title">Features</h2>
+    <section class="features">
+        <div class="feature-card">
+            <span class="material-icons-round">install_mobile</span>
+            <h3>APK Installation</h3>
+            <p style="margin-top: 10px; color: #aaa;">Choose files on your phone and install them on your watch. Supports APK, APKS, and ZIP.</p>
+        </div>
+        <div class="feature-card">
+            <span class="material-icons-round">sync_alt</span>
+            <h3>Wearable IP</h3>
+            <p style="margin-top: 10px; color: #aaa;">Fast data transfer via Wi-Fi or Bluetooth without using cables.</p>
+        </div>
+        <div class="feature-card">
+            <span class="material-icons-round">save_alt</span>
+            <h3>File Export</h3>
+            <p style="margin-top: 10px; color: #aaa;">Download installed files from your watch back to your phone for backup.</p>
+        </div>
+    </section>
+
+    <h2 class="section-title">Screenshots</h2>
+    <div class="gallery-container">
+        <div class="screenshot"><img src="1.png" alt="Screen 1"></div>
+		<div class="screenshot"><img src="2.png" alt="Screen 2"></div>
+		<div class="screenshot"><img src="3.png" alt="Screen 3"></div>
+		<div class="screenshot"><img src="4.png" alt="Screen 4"></div>
+    </div>
+
+	<h2 class="section-title">Video Instruction</h2>
+		<section class="video-section">
+			<div class="video-container">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/0gf24HuP4Bo?si=WPO-LKlozSzR9FFu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>				
+			</div>
+		</section>
+	
+    <h2 class="section-title">FAQ</h2>
+    <section class="faq">
+        <div class="faq-item">
+            <div class="faq-header">
+                How to connect the watch?
+                <span class="material-icons-round arrow">expand_more</span>
+            </div>
+            <div class="faq-body">
+                <p>1. Enable Wi-Fi debugging on your watch.<br>2. Enter the watch's IP address in the app.<br>3. Tap "Connect".</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-header">
+                Does it support Samsung Galaxy Watch?
+                <span class="material-icons-round arrow">expand_more</span>
+            </div>
+            <div class="faq-body">
+                <p>Yes, the app works on all watches with Wear OS 4.0 and higher (Samsung, Pixel Watch, TicWatch).</p>
+            </div>
+        </div>
+    </section>
+
+    <h2 class="section-title">What's New</h2>
+    <section class="updates">
+        <div class="update-item">
+            <span class="date">November 26, 2025 — Version 1.3.2</span>
+            <h3>Stable Release</h3>
+            <p style="color: #aaa;">
+                - "Beta" tag removed (user base > 800).<br>
+                - Added notifications on watch to improve file transfer reliability.<br>
+                - Added vibration/sound on file receipt.<br>
+                - Added share icon in the file list to use system sharing.<br>
+                - Added translations.<br>
+                - 1.3.1 and 1.3.2 clients can work independently.
+            </p>
+        </div>
+        <div class="update-item">
+            <span class="date">November 23, 2025 — Version 1.3.1 Beta</span>
+            <h3>First release on this page!</h3>
+            <p style="color: #aaa;">Bug fixes. Added interface settings and more.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 WearLoad. Developed by <strong>_CAMOPE3_</strong></p>
+        <div class="social-links">
+            <a href="https://github.com/wearload" target="_blank">GitHub</a> 
+            <a href="https://xdaforums.com/t/app-wear-os-wearload-install-apk-apks-zip-without-debug-mode-and-adb.4766128/" target="_blank">XDA</a>
+            <a href="https://4pda.to/forum/index.php?showtopic=1113197" target="_blank">4PDA</a>
+        </div>
+    </footer>
+
+    <script>
+        // Script for the accordion in instructions
+        document.querySelectorAll('.faq-header').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
