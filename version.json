@@ -1,18 +1,18 @@
 {
-	"latestVersionCode": 16,
-	"latestVersionName": "1.3.3",
-	"downloadUrl": "https://wearload.github.io/files/WearLoad-1.3.3.apk",
+	"latestVersionCode": 21,
+	"latestVersionName": "2.0.1",
+	"downloadUrl": "https://wearload.github.io/files/WearLoad-2.0.1.apk",
 	"releaseNotes": {
-		"en": "Fixed critical bugs. Improved performance.",
-		"ru": "Исправлены критические ошибки. Улучшена производительность.",
-		"de": "Kritische Fehler behoben. Leistung verbessert.",
-		"es": "Se corrigieron errores críticos. Rendimiento mejorado.",
-		"et": "Kriitilised vead parandatud. Jõudlust parandatud.",
-		"fr": "Bugs critiques corrigés. Performances améliorées.",
-		"it": "Corretti bug critici. Prestazioni migliorate.",
-		"pl": "Naprawiono krytyczne błędy. Poprawiono wydajność.",
-		"pt": "Bugs críticos corrigidos. Desempenho aprimorado.",
-		"uk": "Виправлено критичні помилки. Покращено продуктивність.",
-		"zh": "修复了严重错误。性能有所提高。"
+		"en": "Faster app list synchronization and a new, optional file transfer method for watches.",
+		"ru": "Ускорена синхронизация списка приложений и добавлен новый, опциональный, метод передачи файлов на часы.",
+		"de": "Beschleunigte App-Listen-Synchronisierung und eine neue, optionale Dateiübertragung für Uhren.",
+		"es": "Sincronización acelerada de la lista de aplicaciones y un nuevo método opcional de transferencia de archivos para relojes.",
+		"et": "Kiirendatud rakenduste loendi sünkroonimine ja uus, valikuline failiedastusmeetod kelladele.",
+		"fr": "Synchronisation accélérée de la liste des applications et une nouvelle méthode optionnelle de transfert de fichiers pour les montres.",
+		"it": "Sincronizzazione accelerata dell'elenco delle app e un nuovo metodo opzionale di trasferimento file per gli orologi.",
+		"pl": "Przyspieszona synchronizacja listy aplikacji i nowa, opcjonalna metoda przesyłania plików na zegarki.",
+		"pt": "Sincronização acelerada da lista de apps e um novo método opcional de transferência de arquivos para relógios.",
+		"uk": "Прискорена синхронізація списку програм та додано новий, опціональний, метод передачі файлів на годинник.",
+		"zh": "加速了应用列表同步，并为手表添加了新的可选文件传输方法。"
 	}
 }
