@@ -1,18 +1,18 @@
 {
-	"latestVersionCode": 22,
-	"latestVersionName": "2.0.2",
-	"downloadUrl": "https://wearload.github.io/files/WearLoad-2.0.2.apk",
+	"latestVersionCode": 30,
+	"latestVersionName": "3.0.0",
+	"downloadUrl": "https://wearload.github.io/files/WearLoad-3.0.0.apk",
 	"releaseNotes": {
-		"en": "Fixed translation issues from the previous version. Added a search section for installed files on the watch and files in phone memory.",
-		"ru": "Исправлены проблемы, связанные с переводом в предыдущей версии. Добавлен раздел поиска по установленным файлам в часах и файлам в памяти телефона.",
-		"de": "Übersetzungsfehler aus der vorherigen Version behoben. Suchbereich für installierte Dateien auf der Uhr und Dateien im Telefonspeicher hinzugefügt.",
-		"es": "Corregidos problemas de traducción de la versión anterior. Añadida una sección de búsqueda para archivos instalados en el reloj y archivos en la memoria del teléfono.",
-		"et": "Parandatud eelmise versiooni tõlkevead. Lisatud otsinguala kellale installitud failide ja telefoni mälus olevate failide jaoks.",
-		"fr": "Problèmes de traduction de la version précédente corrigés. Ajout d'une section de recherche pour les fichiers installés sur la montre et les fichiers en mémoire du téléphone.",
-		"it": "Risolti problemi di traduzione dalla versione precedente. Aggiunta di una sezione di ricerca per i file installati sull'orologio e i file nella memoria del telefono.",
-		"pl": "Naprawiono błędy tłumaczenia z poprzedniej wersji. Dodano sekcję wyszukiwania zainstalowanych plików na zegarku i plików w pamięci telefonu.",
-		"pt": "Corrigidos problemas de tradução da versão anterior. Adicionada uma seção de pesquisa para arquivos instalados no relógio e arquivos na memória do telefone.",		
-		"uk": "Виправлено проблеми перекладу з попередньої версії. Додано розділ пошуку встановлених файлів на годиннику та файлів у пам'яті телефону.",
-		"zh": "修复了之前版本的翻译问题。增加了手表上已安装文件和手机内存中文件的搜索部分。"
+		"en": "Ultra-speed transfer (HTTP), Smart Auto feature, web management interface, and connection status visualization.",
+		"ru": "Ультра-скорость передачи (HTTP), функция Smart Auto, веб-интерфейс управления и визуализация статусов подключения.",
+		"de": "Ultra-Schnelle Übertragung (HTTP), Smart Auto-Funktion, Web-Verwaltungsoberfläche und Verbindungsstatus-Visualisierung.",
+		"es": "Transferencia de ultra velocidad (HTTP), función Smart Auto, interfaz de gestión web y visualización del estado de conexión.",
+		"et": "Ülikiire edastus (HTTP), Smart Auto funktsioon, veebihaldusliides ja ühenduse oleku visualiseerimine.",
+		"fr": "Transfert ultra-rapide (HTTP), fonction Smart Auto, interface de gestion web et visualisation de l'état de la connexion.",
+		"it": "Trasferimento ultra-veloce (HTTP), funzione Smart Auto, interfaccia di gestione web e visualizzazione dello stato della connessione.",
+		"pl": "Ultraszybki transfer (HTTP), funkcja Smart Auto, interfejs zarządzania przez sieć i wizualizacja stanu połączenia.",
+		"pt": "Transferência de ultra velocidade (HTTP), função Smart Auto, interface de gerenciamento web e visualização do status da conexão.",
+		"uk": "Ультра-швидкість передачі (HTTP), функція Smart Auto, веб-інтерфейс керування та візуалізація статусів підключення.",
+		"zh": "超高速传输 (HTTP)，Smart Auto 功能，Web 管理界面和连接状态可视化。"
 	}
 }
