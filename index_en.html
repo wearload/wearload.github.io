@@ -329,11 +329,15 @@
         <h1>WearLoad</h1>
         <p class="tagline">Manage your watch without a PC.<br>Install APK, APKS, and ZIP files in a few clicks.</p>
         
-        <a href="files/WearLoad-3.0.0.apk" class="btn-download">
+        <a href="files/WearLoad-3.0.4.apk" class="btn-download">
             <span class="material-icons-round">download</span>
             Download APK
         </a>
-        <p style="margin-top: 10px; font-size: 0.8rem; color: #666;">Version 3.0.0</p>
+        <p style="margin-top: 10px; font-size: 0.8rem; color: #666;">Version 3.0.4</p>
+        <div style="display: flex; justify-content: center; gap: 15px;">
+            <a href="files/WearLoad-3.0.0.apk" class="archive-link">Version 3.0.0</a>
+            <a href="files/WearLoad-2.0.2.apk" class="archive-link">Version 2.0.2</a>
+        </div>
     </section>
 
     <h2 class="section-title">Features</h2>
@@ -342,6 +346,16 @@
             <span class="material-icons-round">install_mobile</span>
             <h3>APK Installation</h3>
             <p style="margin-top: 10px; color: #aaa;">Choose files on your phone and install them on your watch. Supports APK, APKS, and ZIP.</p>
+        </div>
+        <div class="feature-card">
+            <span class="material-icons-round">language</span>
+            <h3>HTTP Server</h3>
+            <p style="margin-top: 10px; color: #aaa;">Manage your app list via any device's browser. Just scan the QR code on your watch.</p>
+        </div>
+        <div class="feature-card">
+            <span class="material-icons-round">aspect_ratio</span>
+            <h3>Screen Settings</h3>
+            <p style="margin-top: 10px; color: #aaa;">Change your watch's DPI and screen resolution for a better experience with non-optimized apps.</p>
         </div>
         <div class="feature-card">
             <span class="material-icons-round">sync_alt</span>
@@ -368,7 +382,7 @@
 	<h2 class="section-title">Video Instruction</h2>
 		<section class="video-section">
 			<div class="video-container">
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/0gf24HuP4Bo?si=WPO-LKlozSzR9FFu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>				
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/cRqN0rvqA00" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>				
 			</div>
 		</section>
 	
@@ -376,26 +390,96 @@
     <section class="faq">
         <div class="faq-item">
             <div class="faq-header">
-                How to connect the watch?
+                1. Permission Setup (Most Important Step)
                 <span class="material-icons-round arrow">expand_more</span>
             </div>
             <div class="faq-body">
-                <p>1. Enable Wi-Fi debugging on your watch.<br>2. Enter the watch's IP address in the app.<br>3. Tap "Connect".</p>
+                <p><strong>Intro:</strong> On Wear OS watches, the "Install unknown apps" option is often hidden. Without it, installation will not start.</p>
+                <p><strong>How to allow:</strong> In the WearLoad app on your watch, swipe left to the "Settings" screen. If "Install Permission" or "System Settings" are highlighted in red, permissions are missing.</p>
+                <p><strong>Granting permissions:</strong> Use the ADB mode on your phone (see below) to force-grant these rights.</p>
+                <p style="color: #ff6b6b;"><strong>Risks:</strong> By granting permissions, you take responsibility for further actions. Installing apps from unknown sources is not always safe, and allowing system settings changes can harm the device!</p>
             </div>
         </div>
+        
         <div class="faq-item">
             <div class="faq-header">
-                Does it support Samsung Galaxy Watch?
+                2. Classic Mode (Bluetooth / Wearable API)
                 <span class="material-icons-round arrow">expand_more</span>
             </div>
             <div class="faq-body">
-                <p>Yes, the app works on all watches with Wear OS 4.0 and higher (Samsung, Pixel Watch, TicWatch).</p>
+                <p><strong>Essence:</strong> The easiest way, no Wi-Fi required. Works via Bluetooth (Google GMS).</p>
+                <p><strong>Action:</strong> Select an APK on your phone → Tap "Install".</p>
+                <p><strong>On the watch:</strong> Once the transfer is complete, a "Confirm Installation" button will appear in the center of the screen. Tap it.</p>
+                <p><em>Note:</em> A notification has been added just in case. If you accidentally close the installation dialog, tap the notification to resume.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-header">
+                3. Direct Mode (Wi-Fi / Connection Hub / HTTP)
+                <span class="material-icons-round arrow">expand_more</span>
+            </div>
+            <div class="faq-body">
+                <p><strong>Essence:</strong> Maximum transfer speed.</p>
+                <p><strong>Action:</strong> Swipe right on the watch to the "Server" screen and tap "Start" (requires Wi-Fi).</p>
+                <p><strong>On the phone:</strong> Tap the connection icon at the top (Connection Hub). Scan the QR code from the watch. The icon will turn green.</p>
+                <p><strong>Result:</strong> Files will now be sent via Wi-Fi / HTTP. Remember to turn off the server and Wi-Fi after work to save battery!</p>
+                <p><em>Note:</em> An auto-off timer is included in the app, but its performance depends on your device.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-header">
+                4. Independent Mode (Browser / HTTP)
+                <span class="material-icons-round arrow">expand_more</span>
+            </div>
+            <div class="faq-body">
+                <p><strong>Essence:</strong> Installation from a PC or phone without the mobile app.</p>
+                <p><strong>Action:</strong> Start the Server on the watch. Enter the watch's IP address in the browser of any device. Upload the file via the web interface.</p>
+                <p><strong>Requirements:</strong> The watch and the browsing device must be on the same Wi-Fi network (Hotspot or Router).</p>
+                <p style="color: #ff6b6b;"><strong>Security:</strong> Not recommended for use on public networks. The HTTP server is not password protected, and all devices on the network will have access to it.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-header">
+                5. ADB Mode (For Setup Only)
+                <span class="material-icons-round arrow">expand_more</span>
+            </div>
+            <div class="faq-body">
+                <p><strong>Purpose:</strong> Use this if you cannot install WearLoad on the watch or cannot grant permissions manually.</p>
+                <p><strong>Preparation:</strong> In the watch settings, enable "Developer Options" → "Wireless Debugging".</p>
+                <p><strong>Action:</strong> On the phone: Settings → Watch Client → Alternative (ADB). Enter the data from the watch screen. The app will install the companion and grant the necessary rights automatically.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-header">
+                6. Video Instructions
+                <span class="material-icons-round arrow">expand_more</span>
+            </div>
+            <div class="faq-body">
+                <p>To better understand the setup, we recommend watching the short videos available in the "Useful Links" section.</p>
+                <p>There are also links to the community forums: Eng-XDA and RUS-4PDA.</p>
+                <p><em>You will find the key points on the channel, though we cannot record a new video for every single version release.</em></p>
             </div>
         </div>
     </section>
 
     <h2 class="section-title">What's New</h2>
     <section class="updates">
+		<div class="update-item">
+            <span class="date">January 11, 2026 — Version 3.0.4</span>
+            <h3>Bug Fixes & Stability</h3>
+            <p style="color: #aaa;">
+                - <strong>Freeze Fixes:</strong> Resolved WorkManager issues that caused startup crashes on low-end devices.<br>
+                - <strong>GMS Optimization:</strong> Seamless auto-switch to Wi-Fi/HTTP for devices without Google services.<br>
+                - <strong>Safe Start:</strong> The watch server now starts only manually to prevent crash loops.<br>
+                - <strong>Tech Updates:</strong> Implemented Streaming Installation and Zero Copy for faster transfers.<br>
+                - <strong>Connection Reliability:</strong> Improved ADB timeouts and automatic reconnection for unstable Wi-Fi.<br>
+                - <strong>Compatibility:</strong> Fixed crashes on Android 11/12 (API 31).
+            </p>
+        </div>
 		<div class="update-item">
             <span class="date">December 24, 2025 — Version 3.0.0</span>
             <h3>Major Update & New Technologies!</h3>

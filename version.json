@@ -1,18 +1,18 @@
 {
-	"latestVersionCode": 30,
-	"latestVersionName": "3.0.0",
-	"downloadUrl": "https://wearload.github.io/files/WearLoad-3.0.0.apk",
+	"latestVersionCode": 34,
+	"latestVersionName": "3.0.4",
+	"downloadUrl": "https://wearload.github.io/files/WearLoad-3.0.4.apk",
 	"releaseNotes": {
-		"en": "Ultra-speed transfer (HTTP), Smart Auto feature, web management interface, and connection status visualization.",
-		"ru": "Ультра-скорость передачи (HTTP), функция Smart Auto, веб-интерфейс управления и визуализация статусов подключения.",
-		"de": "Ultra-Schnelle Übertragung (HTTP), Smart Auto-Funktion, Web-Verwaltungsoberfläche und Verbindungsstatus-Visualisierung.",
-		"es": "Transferencia de ultra velocidad (HTTP), función Smart Auto, interfaz de gestión web y visualización del estado de conexión.",
-		"et": "Ülikiire edastus (HTTP), Smart Auto funktsioon, veebihaldusliides ja ühenduse oleku visualiseerimine.",
-		"fr": "Transfert ultra-rapide (HTTP), fonction Smart Auto, interface de gestion web et visualisation de l'état de la connexion.",
-		"it": "Trasferimento ultra-veloce (HTTP), funzione Smart Auto, interfaccia di gestione web e visualizzazione dello stato della connessione.",
-		"pl": "Ultraszybki transfer (HTTP), funkcja Smart Auto, interfejs zarządzania przez sieć i wizualizacja stanu połączenia.",
-		"pt": "Transferência de ultra velocidade (HTTP), função Smart Auto, interface de gerenciamento web e visualização do status da conexão.",
-		"uk": "Ультра-швидкість передачі (HTTP), функція Smart Auto, веб-інтерфейс керування та візуалізація статусів підключення.",
-		"zh": "超高速传输 (HTTP)，Smart Auto 功能，Web 管理界面和连接状态可视化。"
+		"en": "Major stability update: fixed startup freezes and connection drops. Optimized for devices without GMS (auto-switch to HTTP). The server now starts only manually to prevent crash loops. Internal improvements: Zero Copy, streaming installation, and better timeouts.",
+		"ru": "Масштабное улучшение стабильности: исправлены зависания при старте и разрывы соединения. Оптимизирована работа на устройствах без GMS. Сервер на часах теперь запускается только вручную для предотвращения сбоев. Внедрены Zero Copy и потоковая установка.",
+		"de": "Großes Stabilitäts-Update: Startprobleme und Verbindungsabbrüche behoben. Optimiert für Geräte ohne GMS (autom. Wechsel zu HTTP). Der Server startet nun nur manuell, um Absturzschleifen zu verhindern. Interne Verbesserungen: Zero Copy, Streaming-Installation und bessere Timeouts.",
+		"es": "Actualización importante de estabilidad: corregidos bloqueos al inicio y caídas de conexión. Optimizado para dispositivos sin GMS (cambio automático a HTTP). El servidor ahora inicia solo manualmente para evitar bucles de error. Mejoras internas: Zero Copy, instalación por streaming y mejores tiempos de espera.",
+		"et": "Oluline stabiilsuse uuendus: parandatud käivitamise takerdumised ja ühenduse katkemised. Optimeeritud GMS-ita seadmetele (automaatne lülitus HTTP-le). Server käivitub nüüd ainult käsitsi, et vältida krahhitsükleid. Sisemised täiustused: Zero Copy, voogedastusega installimine ja paremad ajalimiidid.",
+		"fr": "Mise à jour majeure de stabilité : correction des blocages au démarrage et des pertes de connexion. Optimisé pour les appareils sans GMS (bascule auto vers HTTP). Le serveur démarre désormais uniquement manuellement pour éviter les boucles de crash. Améliorations internes : Zero Copy, installation en streaming et meilleurs délais d'attente.",
+		"it": "Importante aggiornamento di stabilità: risolti i blocchi all'avvio e le cadute di connessione. Ottimizzato per dispositivi senza GMS (passaggio automatico a HTTP). Il server ora si avvia solo manualmente per prevenire loop di crash. Miglioramenti interni: Zero Copy, installazione in streaming e timeout migliori.",
+		"pl": "Ważna aktualizacja stabilności: naprawiono zawieszanie się przy starcie i zrywanie połączenia. Zoptymalizowano dla urządzeń bez GMS (auto-przełączanie na HTTP). Serwer uruchamia się teraz tylko ręcznie, aby zapobiec pętlom awarii. Usprawnienia wewnętrzne: Zero Copy, instalacja strumieniowa i lepsze limity czasu.",
+		"pt": "Grande atualização de estabilidade: corrigidos travamentos na inicialização e quedas de conexão. Otimizado para dispositivos sem GMS (troca automática para HTTP). O servidor agora inicia apenas manualmente para evitar loops de falha. Melhorias internas: Zero Copy, instalação via streaming e melhores timeouts.",
+		"uk": "Масштабне покращення стабільності: виправлено зависання при запуску та розриви з'єднання. Оптимізовано роботу на пристроях без GMS. Сервер на годиннику тепер запускається тільки вручну для запобігання збоїв. Впроваджено Zero Copy та потокове встановлення.",
+		"zh": "重大稳定性更新：修复启动卡顿和连接中断问题。针对无 GMS 设备进行了优化（自动切换到 HTTP）。服务器现在仅手动启动以防止崩溃循环。内部改进：零拷贝 (Zero Copy)、流式安装和更好的超时处理。"
 	}
 }

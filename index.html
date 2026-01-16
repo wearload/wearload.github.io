@@ -331,11 +331,15 @@
         <h1>WearLoad</h1>
         <p class="tagline">Управляй своими часами без ПК.<br>Установка APK, APKS и ZIP файлов в пару кликов.</p>
         
-        <a href="files/WearLoad-3.0.0.apk" class="btn-download">
+        <a href="files/WearLoad-3.0.4.apk" class="btn-download">
             <span class="material-icons-round">download</span>
             Скачать APK
         </a>
-        <p style="margin-top: 10px; font-size: 0.8rem; color: #666;">Версия 3.0.0</p>
+        <p style="margin-top: 10px; font-size: 0.8rem; color: #666;">Версия 3.0.4</p>
+        <div style="display: flex; justify-content: center; gap: 15px;">
+            <a href="files/WearLoad-3.0.0.apk" class="archive-link">Версия 3.0.0</a>
+            <a href="files/WearLoad-2.0.2.apk" class="archive-link">Версия 2.0.2</a>
+        </div>
     </section>
 
     <h2 class="section-title">Возможности</h2>
@@ -344,6 +348,16 @@
             <span class="material-icons-round">install_mobile</span>
             <h3>Установка APK</h3>
             <p style="margin-top: 10px; color: #aaa;">Выбирай файлы на телефоне и устанавливай их на часы. Поддержка APK, APKS и ZIP.</p>
+        </div>
+        <div class="feature-card">
+            <span class="material-icons-round">language</span>
+            <h3>HTTP Сервер</h3>
+            <p style="margin-top: 10px; color: #aaa;">Управляй списком приложений через браузер любого устройства. Просто отсканируй QR-код на часах.</p>
+        </div>
+        <div class="feature-card">
+            <span class="material-icons-round">aspect_ratio</span>
+            <h3>Настройка экрана</h3>
+            <p style="margin-top: 10px; color: #aaa;">Изменяй DPI и разрешение экрана часов для комфортной работы с неадаптированными приложениями.</p>
         </div>
         <div class="feature-card">
             <span class="material-icons-round">sync_alt</span>
@@ -378,26 +392,96 @@
     <section class="faq">
         <div class="faq-item">
             <div class="faq-header">
-                Как подключить часы?
+                1. Подготовка разрешений (Самый важный шаг)
                 <span class="material-icons-round arrow">expand_more</span>
             </div>
             <div class="faq-body">
-                <p>1. Включите отладку по Wi-Fi на часах.<br>2. Введите IP адрес часов в приложении.<br>3. Нажмите "Подключить".</p>
+                <p><strong>Вступление:</strong> На часах Wear OS пункт «Установка неизвестных приложений» часто скрыт. Без него установка не начнется.</p>
+                <p><strong>Как разрешить:</strong> В приложении WearLoad на часах свайпните влево на экран «Настройки». Если пункты «Разрешение на установку» или «Системные настройки» светятся красным — разрешений нет.</p>
+                <p><strong>Предоставляем разрешения:</strong> Используйте ADB-режим на телефоне (см. ниже), чтобы выдать эти права принудительно.</p>
+                <p style="color: #ff6b6b;"><strong>Риски:</strong> Выдавая разрешение, вы берете на себя ответственность за дальнейшие действия. Установка приложений из неизвестного источника не всегда является безопасной, а разрешение изменения системных настроек может навредить устройству!</p>
             </div>
         </div>
+        
         <div class="faq-item">
             <div class="faq-header">
-                Поддерживает ли это Samsung Galaxy Watch?
+                2. Классический режим (Bluetooth/Wearable API)
                 <span class="material-icons-round arrow">expand_more</span>
             </div>
             <div class="faq-body">
-                <p>Да, приложение работает на всех часах с Wear OS 4.0 и выше (Samsung, Pixel Watch, TicWatch).</p>
+                <p><strong>Суть:</strong> Самый простой способ, не требует Wi-Fi. Работает через Bluetooth (Google GMS).</p>
+                <p><strong>Действие:</strong> На телефоне выберите APK → Нажмите «Установить».</p>
+                <p><strong>На часах:</strong> Если передача завершена, в центре экрана появится кнопка «Подтвердить установку». Нажмите её.</p>
+                <p><em>Примечание:</em> На всякий случай добавлено уведомление. Если вы случайно закрыли диалог установки, нажмите на уведомление для возобновления.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-header">
+                3. Прямой режим (Wi-Fi / Центр связи / HTTP)
+                <span class="material-icons-round arrow">expand_more</span>
+            </div>
+            <div class="faq-body">
+                <p><strong>Суть:</strong> Максимальная скорость передачи.</p>
+                <p><strong>Действие:</strong> На часах свайпните вправо до экрана «Сервер» и нажмите Start (нужен Wi-Fi).</p>
+                <p><strong>На телефоне:</strong> Нажмите на иконку связи вверху (Центр связи). Отсканируйте QR-код с часов. Иконка станет зеленой.</p>
+                <p><strong>Результат:</strong> Теперь файлы будут лететь по Wi-Fi / HTTP. Не забудьте выключить сервер и Wi-Fi после работы, чтобы не разрядить батарею!</p>
+                <p><em>Примечание:</em> В приложении добавлен таймер для отключения, но гарантировать, как это сработает на Вашем устройстве, я не могу.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-header">
+                4. Независимый режим (Браузер / HTTP)
+                <span class="material-icons-round arrow">expand_more</span>
+            </div>
+            <div class="faq-body">
+                <p><strong>Суть:</strong> Установка с ПК или телефона без приложения на телефоне.</p>
+                <p><strong>Действие:</strong> Запустите Сервер на часах. Введите IP-адрес часов в браузере любого устройства. Загрузите файл через веб-интерфейс.</p>
+                <p><strong>Требования:</strong> Часы и устройство с браузером должны находиться в одной Wi-Fi сети (это может быть «Точка доступа» или «Роутер»).</p>
+                <p style="color: #ff6b6b;"><strong>Безопасность:</strong> Не рекомендуется использование в общественных сетях. HTTP сервер не защищен паролем, доступ к нему будут иметь все устройства в данной сети.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-header">
+                5. Режим ADB (Только для настройки)
+                <span class="material-icons-round arrow">expand_more</span>
+            </div>
+            <div class="faq-body">
+                <p><strong>Для чего:</strong> Если вы не можете установить WearLoad на часы или не получается выдать разрешения вручную.</p>
+                <p><strong>Подготовка:</strong> В настройках часов включите «Параметры разработчика» → «Отладка по Wi-Fi».</p>
+                <p><strong>Действие:</strong> На телефоне: Настройки → Клиент для часов → Альтернатива (ADB). Введите данные с экрана часов. Приложение само установит компаньон и выдаст нужные права.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-header">
+                6. Видео инструкции
+                <span class="material-icons-round arrow">expand_more</span>
+            </div>
+            <div class="faq-body">
+                <p>Для закрепления информации рекомендую просмотреть краткие видео по настройке, которые доступны в разделе «Полезные ссылки».</p>
+                <p>Также присутствуют 2 ссылки на форумы: Eng-XDA, RUS-4PDA.</p>
+                <p><em>На канале Вы найдете основные моменты, к сожалению, нет возможности для каждой новой версии снимать новый ролик.</em></p>
             </div>
         </div>
     </section>
 
     <h2 class="section-title">Что нового</h2>
     <section class="updates">
+		<div class="update-item">
+            <span class="date">11.01.2026 — Версия 3.0.4</span>
+            <h3>Работа над ошибками и стабильность</h3>
+            <p style="color: #aaa;">
+                - <strong>Устранение зависаний:</strong> Исправлена проблема с WorkManager, вызывавшая сбои при запуске на слабых устройствах.<br>
+                - <strong>Оптимизация GMS:</strong> Автоматическое переключение на Wi-Fi/HTTP на устройствах без сервисов Google без лишних уведомлений.<br>
+                - <strong>Безопасный запуск:</strong> Сервер на часах теперь включается только вручную, что предотвращает циклы перезагрузок при сбоях.<br>
+                - <strong>Технологии:</strong> Внедрена потоковая установка (Streaming Installation) и Zero Copy для ускорения передачи.<br>
+                - <strong>Исправление связи:</strong> Улучшены таймауты ADB и автоматическое переподключение при моргании Wi-Fi.<br>
+                - <strong>Совместимость:</strong> Исправлены вылеты на Android 11/12 (API 31).
+            </p>
+        </div>
 		<div class="update-item">
             <span class="date">24.12.2025 — Версия 3.0.0</span>
             <h3>Масштабное обновление и новые технологии!</h3>
