@@ -329,12 +329,13 @@
         <h1>WearLoad</h1>
         <p class="tagline">Manage your watch without a PC.<br>Install APK, APKS, and ZIP files in a few clicks.</p>
         
-        <a href="files/WearLoad-3.0.4.apk" class="btn-download">
+        <a href="files/WearLoad-3.0.7.apk" class="btn-download">
             <span class="material-icons-round">download</span>
             Download APK
         </a>
-        <p style="margin-top: 10px; font-size: 0.8rem; color: #666;">Version 3.0.4</p>
+        <p style="margin-top: 10px; font-size: 0.8rem; color: #666;">Version 3.0.7</p>
         <div style="display: flex; justify-content: center; gap: 15px;">
+            <a href="files/WearLoad-3.0.4.apk" class="archive-link">Version 3.0.4</a>
             <a href="files/WearLoad-3.0.0.apk" class="archive-link">Version 3.0.0</a>
             <a href="files/WearLoad-2.0.2.apk" class="archive-link">Version 2.0.2</a>
         </div>
@@ -468,6 +469,23 @@
 
     <h2 class="section-title">What's New</h2>
     <section class="updates">
+		<div class="update-item">
+            <span class="date">February 19, 2026 — Version 3.0.7 (Power User Bonus)</span>
+            <h3>Hidden ADB Features ("Green Bug")</h3>
+            <p style="color: #aaa;">
+                <strong>Note:</strong> This is an experimental bonus for advanced users, intentionally kept away from the main UI.<br>
+                <strong>How to activate:</strong><br>
+                1. Open the WearLoad app on your phone first.<br>
+                2. Then enable "Wireless Debugging" on your watch.<br>
+                <em>The watch broadcasts its connection data only at the exact moment debugging is enabled. If the phone app is inactive, it will miss the signal and auto-connect (green bug icon) won't trigger.</em><br>
+                <strong>Capabilities:</strong><br>
+                - In the "Installed" list, <strong>long press</strong> any app card to access the hidden permission menu.<br>
+                - Remotely toggle 10 permission types: Install unknown apps, Secure Settings, Logcat access, Battery stats, and more.<br>
+                - <strong>Smart Feedback:</strong> The app verifies each ADB command. If the system denies the permission, the toggle will automatically reset.<br>
+                - <strong>Compatibility:</strong> Lowered watch companion <strong>minSdkVersion to 30</strong> (Android 11). This extends support to older watch models.<br>
+                <strong>Troubleshooting:</strong> Settings -> Watch Client -> Alternative (ADB) -> New Connection. Complete <strong>only the first step (Pairing)</strong>. Once you see "Step 2," the keys are saved and you can exit.
+            </p>
+        </div>
 		<div class="update-item">
             <span class="date">January 11, 2026 — Version 3.0.4</span>
             <h3>Bug Fixes & Stability</h3>
