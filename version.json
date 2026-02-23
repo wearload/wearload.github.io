@@ -1,18 +1,18 @@
 {
-	"latestVersionCode": 37,
-	"latestVersionName": "3.0.7",
-	"downloadUrl": "https://wearload.github.io/files/WearLoad-3.0.7.apk",
+	"latestVersionCode": 38,
+	"latestVersionName": "3.0.8",
+	"downloadUrl": "https://wearload.github.io/files/WearLoad-3.0.8.apk",
 	"releaseNotes": {
-		"en": "Power user bonus: remote management of 10 permission types (via ADB & long press). Lowered watch companionSdkVersion to 30 (Android 11). Improved 'Green Bug' auto-connect.",
-		"ru": "Бонус для профи: удаленное управление 10 типами разрешений (через ADB и долгий тап). SDK компаньона понижен до 30 (Android 11). Улучшена автоматика «Зеленого жучка».",
-		"de": "Power-User-Bonus: Remote-Verwaltung von 10 Berechtigungstypen (über ADB & langen Druck). SDK für Uhren auf 30 gesenkt (Android 11). Verbesserte 'Green Bug'-Verbindung.",
-		"es": "Bonus para expertos: gestión remota de 10 tipos de permisos (vía ADB). SDK de reloj bajado a 30 (Android 11). Mejora en conexión automática 'Green Bug'.",
-		"et": "Boonus edasijõudnutele: 10 tüüpi õiguste kaughaldus (ADB). Kella SDK langetatud 30-le (Android 11). Täiustatud 'Green Bug' ühendamine.",
-		"fr": "Bonus pour experts : gestion à distance de 10 types de permissions (via ADB). SDK montre abaissé à 30 (Android 11). Amélioration de la connexion auto 'Green Bug'.",
-		"it": "Bonus per esperti: gestione remota di 10 tipi di permessi (via ADB). SDK orologio abbassato a 30 (Android 11). Migliorata la connessione automatica 'Green Bug'.",
-		"pl": "Bonus dla zaawansowanych: zdalne zarządzanie 10 typami uprawnień (przez ADB). SDK zegarka obniżone do 30 (Android 11). Poprawiono auto-łączenie 'Green Bug'.",
-		"pt": "Bónus para especialistas: gestão remota de 10 tipos de permissões (via ADB). SDK do relógio baixado para 30 (Android 11). Melhoria na ligação 'Green Bug'.",
-		"uk": "Бонус для профі: віддалене керування 10 типами дозволів (через ADB). SDK годинника знижено до 30 (Android 11). Покращено автоматику «Зеленого жучка».",
-		"zh": "高级用户奖励：远程管理 10 种权限类型（通过 ADB）。手表 SDK 降低至 30 (Android 11)。改进了“绿色小虫”自动连接。"
+		"en": "Bug fixes",
+		"ru": "Исправление ошибки",
+		"de": "Fehlerbehebungen",
+		"es": "Corrección de errores",
+		"et": "Veaparandused",
+		"fr": "Corrections de bugs",
+		"it": "Correzioni di bug",
+		"pl": "Poprawki błędów",
+		"pt": "Correções de bugs",
+		"uk": "Виправлення помилок",
+		"zh": "错误修复"
 	}
 }
