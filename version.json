@@ -1,18 +1,19 @@
 {
-	"latestVersionCode": 38,
-	"latestVersionName": "3.0.8",
-	"downloadUrl": "https://wearload.github.io/files/WearLoad-3.0.8.apk",
+	"latestVersionCode": 39,
+	"latestVersionName": "3.0.9",
+	"downloadUrl": "https://wearload.github.io/files/WearLoad-3.0.9.apk",
 	"releaseNotes": {
-		"en": "Bug fixes",
-		"ru": "Исправление ошибки",
-		"de": "Fehlerbehebungen",
-		"es": "Corrección de errores",
-		"et": "Veaparandused",
-		"fr": "Corrections de bugs",
-		"it": "Correzioni di bug",
-		"pl": "Poprawki błędów",
-		"pt": "Correções de bugs",
-		"uk": "Виправлення помилок",
-		"zh": "错误修复"
+		"en": "Share module: select file -> Share -> WearLoad for quick transfer to your watch.",
+		"ru": "Модуль «Поделиться»: выберите файл -> Поделиться -> WearLoad для быстрой отправки на часы.",
+		"bg": "Модул Споделяне: изберете файл -> Споделяне -> WearLoad за бързо изпращане към часовника.",
+		"de": "Teilen-Modul: Datei auswählen -> Teilen -> WearLoad für schnelle Übertragung auf die Uhr.",
+		"es": "Módulo Compartir: seleccionar archivo -> Compartir -> WearLoad para transferencia rápida al reloj.",
+		"et": "Jagamismoodul: vali fail -> Jaga -> WearLoad kiireks kella saatmiseks.",
+		"fr": "Module Partager : choisir fichier -> Partager -> WearLoad pour un transfert rapide vers la montre.",
+		"it": "Modulo Condividi: seleziona file -> Condividi -> WearLoad per il trasferimento rapido sull'orologio.",
+		"pl": "Moduł Udostępnij: wybierz plik -> Udostępnij -> WearLoad, aby szybko przesłać na zegarek.",
+		"pt": "Módulo Compartilhar: selecione o arquivo -> Compartilhar -> WearLoad para transferência rápida para o relógio.",
+		"uk": "Модуль «Поділитися»: виберіть файл -> Поділитися -> WearLoad для швидкої відправки на годинник.",
+		"zh": "分享模块：选择文件 -> 分享 -> WearLoad 快速发送到手表。"
 	}
 }
