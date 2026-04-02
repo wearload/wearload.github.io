@@ -1,19 +1,19 @@
 {
-	"latestVersionCode": 39,
-	"latestVersionName": "3.0.9",
-	"downloadUrl": "https://wearload.github.io/files/WearLoad-3.0.9.apk",
+	"latestVersionCode": 41,
+	"latestVersionName": "4.0.1",
+	"downloadUrl": "https://wearload.github.io/files/WearLoad-4.0.1.apk",
 	"releaseNotes": {
-		"en": "Share module: select file -> Share -> WearLoad for quick transfer to your watch.",
-		"ru": "Модуль «Поделиться»: выберите файл -> Поделиться -> WearLoad для быстрой отправки на часы.",
-		"bg": "Модул Споделяне: изберете файл -> Споделяне -> WearLoad за бързо изпращане към часовника.",
-		"de": "Teilen-Modul: Datei auswählen -> Teilen -> WearLoad für schnelle Übertragung auf die Uhr.",
-		"es": "Módulo Compartir: seleccionar archivo -> Compartir -> WearLoad para transferencia rápida al reloj.",
-		"et": "Jagamismoodul: vali fail -> Jaga -> WearLoad kiireks kella saatmiseks.",
-		"fr": "Module Partager : choisir fichier -> Partager -> WearLoad pour un transfert rapide vers la montre.",
-		"it": "Modulo Condividi: seleziona file -> Condividi -> WearLoad per il trasferimento rapido sull'orologio.",
-		"pl": "Moduł Udostępnij: wybierz plik -> Udostępnij -> WearLoad, aby szybko przesłać na zegarek.",
-		"pt": "Módulo Compartilhar: selecione o arquivo -> Compartilhar -> WearLoad para transferência rápida para o relógio.",
-		"uk": "Модуль «Поділитися»: виберіть файл -> Поділитися -> WearLoad для швидкої відправки на годинник.",
-		"zh": "分享模块：选择文件 -> 分享 -> WearLoad 快速发送到手表。"
+		"en": "Improved file scanner with .ignore support, Facer watchface previews, and fixed memory leaks during archive scanning.",
+		"ru": "Улучшен сканер файлов с поддержкой .ignore, превью для циферблатов Facer и исправление утечек памяти при сканировании архивов.",
+		"bg": "Подобрен скенер за файлове с поддръжка на .ignore, прегледи на циферблати Facer и поправени изтичания на памет при сканиране на архиви.",
+		"de": "Verbesserter Dateiscanner mit .ignore-Unterstützung, Facer-Zifferblatt-Vorschauen und behobene Speicherlecks beim Archiv-Scanning.",
+		"es": "Escáner de archivos mejorado con soporte para .ignore, vistas previas de esferas Facer y fugas de memoria corregidas al escanear archivos.",
+		"et": "Täiustatud failiskanner .ignore toega, Faceri kellaplaatide eelvaated ja parandatud mälulekked arhiivide skannimisel.",
+		"fr": "Scanner de fichiers amélioré avec prise en charge de .ignore, aperçus de cadrans Facer et fuites de mémoire corrigées lors de l'analyse des archives.",
+		"it": "Scanner di file migliorato con supporto .ignore, anteprime dei quadranti Facer e perdite di memoria corrette durante la scansione degli archivi.",
+		"pl": "Ulepszony skaner plików z obsługą .ignore, podglądy tarcz Facer i naprawione wycieki pamięci podczas skanowania archiwów.",
+		"pt": "Scanner de arquivos aprimorado com suporte a .ignore, prévias de mostradores Facer e vazamentos de memória corrigidos na verificação de arquivos.",
+		"uk": "Покращено сканер файлів з підтримкою .ignore, прев'ю для циферблатів Facer та виправлення витоків пам'яті при скануванні архівів.",
+		"zh": "改进的文件扫描器支持 .ignore，Facer 表盘预览，并修复了扫描压缩包时的内存泄漏。"
 	}
 }
