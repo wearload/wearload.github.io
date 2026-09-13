@@ -1,19 +1,19 @@
 {
-	"latestVersionCode": 41,
-	"latestVersionName": "4.0.1",
-	"downloadUrl": "https://wearload.github.io/files/WearLoad-4.0.1.apk",
+	"latestVersionCode": 43,
+	"latestVersionName": "4.0.3",
+	"downloadUrl": "https://wearload.github.io/files/WearLoad-4.0.3.apk",
 	"releaseNotes": {
-		"en": "Improved file scanner with .ignore support, Facer watchface previews, and fixed memory leaks during archive scanning.",
-		"ru": "Улучшен сканер файлов с поддержкой .ignore, превью для циферблатов Facer и исправление утечек памяти при сканировании архивов.",
-		"bg": "Подобрен скенер за файлове с поддръжка на .ignore, прегледи на циферблати Facer и поправени изтичания на памет при сканиране на архиви.",
-		"de": "Verbesserter Dateiscanner mit .ignore-Unterstützung, Facer-Zifferblatt-Vorschauen und behobene Speicherlecks beim Archiv-Scanning.",
-		"es": "Escáner de archivos mejorado con soporte para .ignore, vistas previas de esferas Facer y fugas de memoria corregidas al escanear archivos.",
-		"et": "Täiustatud failiskanner .ignore toega, Faceri kellaplaatide eelvaated ja parandatud mälulekked arhiivide skannimisel.",
-		"fr": "Scanner de fichiers amélioré avec prise en charge de .ignore, aperçus de cadrans Facer et fuites de mémoire corrigées lors de l'analyse des archives.",
-		"it": "Scanner di file migliorato con supporto .ignore, anteprime dei quadranti Facer e perdite di memoria corrette durante la scansione degli archivi.",
-		"pl": "Ulepszony skaner plików z obsługą .ignore, podglądy tarcz Facer i naprawione wycieki pamięci podczas skanowania archiwów.",
-		"pt": "Scanner de arquivos aprimorado com suporte a .ignore, prévias de mostradores Facer e vazamentos de memória corrigidos na verificação de arquivos.",
-		"uk": "Покращено сканер файлів з підтримкою .ignore, прев'ю для циферблатів Facer та виправлення витоків пам'яті при скануванні архівів.",
-		"zh": "改进的文件扫描器支持 .ignore，Facer 表盘预览，并修复了扫描压缩包时的内存泄漏。"
+		"en": "Default transfer method (Channel API) now continues in the background when the watch screen turns off. Added a cancel button on the transfer progress. Everything else is unchanged.",
+		"ru": "Метод передачи по умолчанию (Channel API) теперь продолжается в фоне, когда гаснет экран часов. Добавлена кнопка отмены у прогресса передачи. Всё остальное без изменений.",
+		"bg": "Методът по подразбиране (Channel API) вече продължава да работи във фонов режим, когато екранът на часовника изгасне. Добавен е бутон за отмяна до прогреса на прехвърлянето. Всичко останало е без промяна.",
+		"de": "Der Standardübertragungsmodus (Channel API) läuft nun im Hintergrund weiter, wenn der Bildschirm der Uhr ausgeht. Zum Übertragungsfortschritt wurde eine Abbrechen-Schaltfläche hinzugefügt. Alles andere bleibt unverändert.",
+		"es": "El método de transferencia predeterminado (Channel API) ahora continúa en segundo plano cuando la pantalla del reloj se apaga. Se añadió un botón de cancelar junto a la barra de progreso. Todo lo demás no cambia.",
+		"et": "Vaikimisi edastusmeetod (Channel API) jätkub nüüd taustal, kui kella ekraan kustub. Edastuse edenemisribale lisati tühistamisnupp. Kõik muu on muutmata.",
+		"fr": "La méthode de transfert par défaut (Channel API) continue désormais en arrière-plan lorsque l'écran de la montre s'éteint. Un bouton d'annulation a été ajouté à la barre de progression. Tout le reste est inchangé.",
+		"it": "Il metodo di trasferimento predefinito (Channel API) ora continua in background quando lo schermo dell'orologio si spegne. Aggiunto un pulsante di annulla all'avanzamento del trasferimento. Tutto il resto è invariato.",
+		"pl": "Domyślna metoda przesyłania (Channel API) działa teraz w tle, gdy ekran zegarka gaśnie. Do paska postępu dodano przycisk anulowania. Reszta bez zmian.",
+		"pt": "O método de transferência padrão (Channel API) agora continua em segundo plano quando a tela do relógio desliga. Adicionado um botão de cancelar à barra de progresso. Todo o resto permanece igual.",
+		"uk": "Метод передачі за замовчуванням (Channel API) тепер продовжує роботу у фоновому режимі, коли екран годинника гасне. Додано кнопку скасування біля прогресу передачі. Все інше без змін.",
+		"zh": "默认传输方式（Channel API）现在在手表屏幕熄灭后仍会在后台继续传输。在传输进度条旁增加了取消按钮。其他一切保持不变。"
 	}
 }
